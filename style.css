@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+* {margin:0; padding:0;}
+body {padding-top: 100px;}
+li {list-style: none;}
+.wrap {
+  width: 480px;
+  margin:0 auto;
+}
+
+form {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+form input {
+  height: 40px;
+  padding: 0 20px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+form input:focus {
+  border-radius: none;
+}
+
+form button {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid #000;
+}
+
+ul li {
+  display: flex;
+  gap: 5px;
+  height: 30px;
+  line-height: 30px;
+  align-items: center;
+}
+
+ul input {
+  display: none;
+}
+
+ul .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+}
+
+ul .circle:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+
+ul input:checked + .circle {
+  border-color: #8a8a8a;
+}
+
+ul input:checked + .circle:after {
+  display: block;
+  background-color: #8a8a8a;
+}
+
+ul input:checked ~ label:not(.circle) {
+  color: #8a8a8a;
+  text-decoration: line-through;
+}
